@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Swipe Photo Manager</string>
+    <!-- Permission-related strings -->
+    <string name="storage_permission_rationale">Storage permission is required to access your photos</string>
+    <string name="permission_delete_rationale">Storage permission is required to permanently delete photos</string>
+    <!--<string name="permission_required_title">Permission Required</string>-->
+    <string name="permission_denied_title">Permission Denied</string>
+    <string name="permission_permanent_denial">You permanently denied storage permission. Please enable it in Settings.</string>
+
+    <!-- Dialog button text -->
+    <string name="cancel">Cancel</string>
+    <string name="grant">Grant</string>
+    <string name="settings">Settings</string>
+    <string name="retry">Retry</string>
+
+    <string name="permission_rationale">Storage permission is required to scan and clean your photos</string>
+    <string name="permission_required">Permission Required</string>
+
+    <!-- Permission-related strings -->
+    <string name="permission_required_title">Storage Permission Required</string>
+    <string name="permission_rationale_scan">To scan your photos and identify similar images, access to your photo library is required.</string>
+    <string name="permission_rationale_delete">File management permission is required to permanently delete selected photos.</string>
+    <string name="permission_rationale_manage_storage">"All files access" permission is required to manage your photo files. Tap "Open Settings" to enable this permission in system settings.</string>
+    <string name="permission_rationale_denied">You permanently denied storage permission. Enable it in system settings to use all features.</string>
+    <string name="permission_grant">Grant</string>
+    <string name="permission_deny">Deny</string>
+    <string name="permission_open_settings">Open Settings</string>
+    <string name="permission_cancel">Cancel</string>
+    <string name="permission_denied_warning">Storage permission denied. Some features may not work.</string>
+    <string name="permission_rationale_storage">The app needs storage permission to scan and manage your photos</string>
+</resources>

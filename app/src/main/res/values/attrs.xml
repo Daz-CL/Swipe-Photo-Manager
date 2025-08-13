@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundImageView">
+        <attr name="radius" format="reference|dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SquareGridView">
+        <!-- 水平间距 -->
+        <attr name="horizontalSpacing" format="dimension" />
+        <!-- 垂直间距 -->
+        <attr name="verticalSpacing" format="dimension" />
+        <!-- 列数 -->
+        <attr name="numColumns" format="integer" />
+        <!-- 项边距 -->
+        <attr name="itemMargin" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:background="@android:color/white"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <!-- 主图片，保持正方形 -->
+    <ImageView
+        android:id="@+id/iv_trash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/hair_03" />
+
+    <!-- 选择按钮，固定在右上角 -->
+    <ImageView
+        android:id="@+id/btn_select"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/okey_act_n" />
+
+</FrameLayout>

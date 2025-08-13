@@ -1,0 +1,67 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.gallery.sweeper.photo.cleaner'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.gallery.sweeper.photo.cleaner"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation "androidx.startup:startup-runtime:1.1.1"
+    //implementation "com.appsflyer:af-android-sdk:6.13.0"
+    implementation(project(":lib_base"))
+    implementation(project(":lib_tantan"))
+
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // LiveData 和 ViewModel
+    implementation "androidx.lifecycle:lifecycle-livedata:2.6.2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.6.2"
+
+    // Java 8+ API
+    implementation "androidx.room:room-common:$room_version"
+
+    // 分页库
+    implementation "androidx.paging:paging-runtime:3.2.1"
+
+    // 可选：RxJava 支持
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    implementation 'pub.devrel:easypermissions:3.0.0'
+}

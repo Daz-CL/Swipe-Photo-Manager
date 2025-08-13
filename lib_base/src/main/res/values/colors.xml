@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialog_bg">#bc000000</color>
+
+    <color name="text_black_color">#404040</color>
+    <color name="text_gray_color">#6f6f6f</color>
+    <color name="blue_color">#0396ff</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparency">#00FFFFFF</color>
+
+    <color name="white_transparency_100">#00FFFFFF</color>
+    <color name="white_transparency_95">#0DFFFFFF</color>
+    <color name="white_transparency_90">#1AFFFFFF</color>
+    <color name="white_transparency_85">#26FFFFFF</color>
+    <color name="white_transparency_80">#33FFFFFF</color>
+    <color name="white_transparency_75">#40FFFFFF</color>
+    <color name="white_transparency_70">#4DFFFFFF</color>
+    <color name="white_transparency_65">#59FFFFFF</color>
+    <color name="white_transparency_60">#66FFFFFF</color>
+    <color name="white_transparency_50">#80FFFFFF</color>
+    <color name="white_transparency_40">#99FFFFFF</color>
+    <color name="white_transparency_35">#A6FFFFFF</color>
+    <color name="white_transparency_30">#B3FFFFFF</color>
+    <color name="white_transparency_20">#CCFFFFFF</color>
+    <color name="white_transparency_15">#D9FFFFFF</color>
+    <color name="white_transparency_10">#E6FFFFFF</color>
+    <color name="white_transparency_0">#FFFFFFFF</color>
+
+    <color name="black_transparency_90">#1A000000</color>
+    <color name="black_transparency_85">#26000000</color>
+    <color name="black_transparency_80">#33000000</color>
+    <color name="black_transparency_75">#40000000</color>
+    <color name="black_transparency_70">#4D000000</color>
+    <color name="black_transparency_60">#66000000</color>
+    <color name="black_transparency_50">#80000000</color>
+    <color name="black_transparency_40">#99000000</color>
+    <color name="black_transparency_35">#A6000000</color>
+    <color name="black_transparency_30">#B3000000</color>
+    <color name="black_transparency_25">#BF000000</color>
+    <color name="black_transparency_20">#CC000000</color>
+    <color name="black_transparency_15">#D9000000</color>
+    <color name="black_transparency_10">#E6000000</color>
+    <color name="black_transparency_0">#FF000000</color>
+
+    <color name="blue_transparency_95">#0D153351</color>
+    <color name="blue_transparency_50">#80153351</color>
+    <color name="blue_transparency_40">#99153351</color>
+    <color name="blue_transparency_5">#F2153351</color>
+    <color name="blue_transparency_0">#FF153351</color>
+
+    <color name="orange1">#F0B122</color>
+</resources>
