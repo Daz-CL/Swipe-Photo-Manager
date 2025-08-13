@@ -28,4 +28,11 @@
     <string name="permission_cancel">Cancel</string>
     <string name="permission_denied_warning">Storage permission denied. Some features may not work.</string>
     <string name="permission_rationale_storage">The app needs storage permission to scan and manage your photos</string>
+
+    <!-- 权限相关提示 -->
+    <string name="permission_denied_message_scan">没有相册访问权限，无法扫描照片</string>
+    <string name="permission_confirm">确定</string>
+    <string name="delete_permission_denied">删除权限被拒绝，无法清理照片</string>
+    <string name="no_photos_selected">未选择照片</string>
+    <string name="photos_deleted_successfully">照片删除成功</string>
 </resources>

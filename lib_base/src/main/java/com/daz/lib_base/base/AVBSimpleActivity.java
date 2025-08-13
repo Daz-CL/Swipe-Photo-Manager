@@ -45,7 +45,7 @@ public abstract class AVBSimpleActivity<VB extends ViewBinding, VM extends ViewM
             binding = initViewBinding();
             setContentView(binding.getRoot());
         } catch (Exception e) {
-            Log.e(TAG, "ViewBinding init failed", e);
+            Log.e(TAG, "ViewBinding init failed："+ e);
             finish();
             return;
         }
@@ -57,7 +57,7 @@ public abstract class AVBSimpleActivity<VB extends ViewBinding, VM extends ViewM
                 viewModel = new ViewModelProvider(this).get(viewModelClass);
             }
         } catch (Exception e) {
-            Log.e(TAG, "ViewModel creation failed", e);
+            Log.e(TAG, "ViewModel creation failed："+ e);
         }
 
         initImmersionBar();
@@ -99,7 +99,7 @@ public abstract class AVBSimpleActivity<VB extends ViewBinding, VM extends ViewM
         try {
             binding = null;
         } catch (Exception e) {
-            Log.e(TAG, "Binding release failed", e);
+            Log.e(TAG, "Binding release failed："+ e);
         }
     }
 
@@ -114,7 +114,7 @@ public abstract class AVBSimpleActivity<VB extends ViewBinding, VM extends ViewM
                 try {
                     action.run();
                 } catch (Exception e) {
-                    Log.e(TAG, "UI action failed", e);
+                    Log.e(TAG, "UI action failed："+ e);
                 }
             }
         });
@@ -128,7 +128,7 @@ public abstract class AVBSimpleActivity<VB extends ViewBinding, VM extends ViewM
             try {
                 action.run(binding);
             } catch (Exception e) {
-                Log.e(TAG, "Binding action failed", e);
+                Log.e(TAG, "Binding action failed："+ e);
             }
         } else {
             Log.w(TAG, "Binding unavailable");

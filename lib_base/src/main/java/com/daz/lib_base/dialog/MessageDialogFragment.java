@@ -1,7 +1,6 @@
 package com.daz.lib_base.dialog;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
@@ -131,33 +130,32 @@ public class MessageDialogFragment extends AppCompatDialogFragment {
             return;
         }
 
-        switch (intentMessageType){
+        switch (intentMessageType) {
             case MessageDialogParams.TYPE_ORANGE:
                 btnLeft.setBackgroundResource(R.drawable.shape_bg_orange_normal);
                 btnRight.setBackgroundResource(R.drawable.shape_bg_orange);
                 break;
         }
 
-        if (TextUtils.isEmpty(intentLeftButton)
-                && TextUtils.isEmpty(intentRightButton)) {
+        if (TextUtils.isEmpty(intentLeftButton)) {
             btnLeft.setVisibility(View.GONE);
-            btnRight.setVisibility(View.GONE);
-
-        } else {
-            btnLeft.setText(intentLeftButton);
-            btnLeft.setOnClickListener(view -> {
-                //左边按钮事件
-                mDialog.dismiss();
-                dataCallback.messageDialogClickLeftButtonListener(mDialog, intentMessageType, btnLeft.getText().toString());
-            });
-
-            btnRight.setText(intentRightButton);
-            btnRight.setOnClickListener(v -> {
-                //右边按钮事件
-                mDialog.dismiss();
-                dataCallback.messageDialogClickRightButtonListener(mDialog, intentMessageType, btnRight.getText().toString());
-            });
         }
+        if (TextUtils.isEmpty(intentRightButton)) {
+            btnRight.setVisibility(View.GONE);
+        }
+        btnLeft.setText(intentLeftButton);
+        btnLeft.setOnClickListener(view -> {
+            //左边按钮事件
+            mDialog.dismiss();
+            dataCallback.messageDialogClickLeftButtonListener(mDialog, intentMessageType, btnLeft.getText().toString());
+        });
+
+        btnRight.setText(intentRightButton);
+        btnRight.setOnClickListener(v -> {
+            //右边按钮事件
+            mDialog.dismiss();
+            dataCallback.messageDialogClickRightButtonListener(mDialog, intentMessageType, btnRight.getText().toString());
+        });
     }
 }
 

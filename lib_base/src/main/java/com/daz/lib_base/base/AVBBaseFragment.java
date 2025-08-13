@@ -53,7 +53,7 @@ public abstract class AVBBaseFragment<VB extends ViewBinding, VM extends ViewMod
             binding = initViewBinding(inflater, container);
             return binding.getRoot();
         } catch (Exception e) {
-            Log.e("VBBaseFragment", "ViewBinding init failed", e);
+            Log.e("VBBaseFragment", "ViewBinding init failed："+ e);
             return null;
         }
     }
@@ -70,7 +70,7 @@ public abstract class AVBBaseFragment<VB extends ViewBinding, VM extends ViewMod
                 viewModel = new ViewModelProvider(this).get(viewModelClass);
             }
         } catch (Exception e) {
-            Log.e(TAG, "ViewModel creation failed", e);
+            Log.e(TAG, "ViewModel creation failed："+ e);
         }
 
         onViewInitialized();
@@ -91,7 +91,7 @@ public abstract class AVBBaseFragment<VB extends ViewBinding, VM extends ViewMod
         try {
             binding = null;
         } catch (Exception e) {
-            Log.e(TAG, "Binding release failed", e);
+            Log.e(TAG, "Binding release failed："+ e);
         }
     }
 
@@ -116,7 +116,7 @@ public abstract class AVBBaseFragment<VB extends ViewBinding, VM extends ViewMod
             // 实现对话框显示逻辑
             showMessageDialog(params);
         } catch (Exception e) {
-            Log.e(TAG, "Dialog show failed", e);
+            Log.e(TAG, "Dialog show failed："+ e);
         }
     }
 

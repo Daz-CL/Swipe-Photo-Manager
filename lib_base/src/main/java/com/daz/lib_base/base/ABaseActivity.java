@@ -59,7 +59,7 @@ public abstract class ABaseActivity extends AppCompatActivity {
                     loadingDialog.setCancelable(false);
                     loadingDialog.show();
                 } catch (Exception e) {
-                    Log.e(getClass().getSimpleName(), "Show loading failed", e);
+                    Log.e(getClass().getSimpleName(), "Show loading failed："+ e);
                 }
             }
         });
@@ -70,7 +70,7 @@ public abstract class ABaseActivity extends AppCompatActivity {
             try {
                 loadingDialog.dismiss();
             } catch (Exception e) {
-                Log.e(getClass().getSimpleName(), "Dismiss loading failed", e);
+                Log.e(getClass().getSimpleName(), "Dismiss loading failed："+ e);
             }
             loadingDialog = null;
         }
@@ -88,7 +88,7 @@ public abstract class ABaseActivity extends AppCompatActivity {
                 try {
                     action.run();
                 } catch (Exception e) {
-                    Log.e(getClass().getSimpleName(), "UI action failed", e);
+                    Log.e(getClass().getSimpleName(), "UI action failed："+ e);
                 }
             }
         });

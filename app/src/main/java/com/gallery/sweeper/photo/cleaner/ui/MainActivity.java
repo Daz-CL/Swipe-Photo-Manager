@@ -8,11 +8,17 @@ import androidx.fragment.app.FragmentManager;
 import com.daz.lib_base.base.SimpleActivity;
 import com.daz.lib_base.utils.XLog;
 import com.gallery.sweeper.photo.cleaner.R;
+import com.gallery.sweeper.photo.cleaner.data.PhotoRepository;
+import com.gallery.sweeper.photo.cleaner.data.events.TrashEvents;
 import com.gallery.sweeper.photo.cleaner.databinding.ActivityMainBinding;
 import com.gallery.sweeper.photo.cleaner.ui.fragment.MainFragmentController;
 import com.gallery.sweeper.photo.cleaner.ui.fragment.PhotoGroupFragment;
 import com.gallery.sweeper.photo.cleaner.ui.fragment.SettingsFragment;
 import com.gallery.sweeper.photo.cleaner.ui.fragment.TrashFragment;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,5 +89,42 @@ public class MainActivity extends SimpleActivity<ActivityMainBinding> {
         } catch (Exception e) {
             XLog.e(TAG, "【UI】切换Fragment失败: " + e.getMessage());
         }
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        try {
+            if (!EventBus.getDefault().isRegistered(this)) {
+                EventBus.getDefault().register(this);
+                XLog.d(TAG, "【权限】EventBus已注册");
+            }
+        } catch (Exception e) {
+            XLog.e(TAG, "【权限】EventBus注册失败: " + e.getMessage());
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PhotoRepository.getInstance().shutdown();
+        try {
+            if (EventBus.getDefault().isRegistered(this)) {
+                EventBus.getDefault().unregister(this);
+                XLog.d(TAG, "【权限】EventBus已注销");
+            }
+        } catch (Exception e) {
+            XLog.e(TAG, "【权限】EventBus注销失败: " + e.getMessage());
+        }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void eventTrashChangeEvents(TrashEvents.TrashChangeEvent event) {
+        int size = event.size;
+        binding.tvCountTrash.setVisibility(size > 0 ? View.VISIBLE : View.INVISIBLE);
+        binding.tvCountTrash.setText(String.format("%d", size));
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void eventTrashSelectEvents(TrashEvents.selectTrashByGroup event) {
+        switchTab(0);
     }
 }

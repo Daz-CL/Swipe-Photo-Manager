@@ -36,20 +36,6 @@ public abstract class VBBaseFragment<VB extends ViewBinding, VM extends AndroidV
     protected Bundle savedInstanceState;
     protected String TAG;
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        try {
-            // 注册EventBus（新增）
-            if (!EventBus.getDefault().isRegistered(this)) {
-                EventBus.getDefault().register(this);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -78,6 +64,14 @@ public abstract class VBBaseFragment<VB extends ViewBinding, VM extends AndroidV
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
         XLog.w( TAG,"创建(Fragment): "+TAG );
+        try {
+            // 注册EventBus（新增）
+            if (!EventBus.getDefault().isRegistered(this)) {
+                EventBus.getDefault().register(this);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Nullable

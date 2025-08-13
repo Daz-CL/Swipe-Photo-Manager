@@ -63,9 +63,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
-            android:exported="true">
-        </activity>
+            android:name="com.gallery.sweeper.photo.cleaner.ui.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gallery.sweeper.photo.cleaner.ui.WebActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gallery.sweeper.photo.cleaner.ui.SwipeTrashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

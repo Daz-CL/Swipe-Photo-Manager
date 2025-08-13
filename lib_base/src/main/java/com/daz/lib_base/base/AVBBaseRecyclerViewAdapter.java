@@ -36,7 +36,7 @@ public abstract class AVBBaseRecyclerViewAdapter<T, VH extends RecyclerView.View
             T item = getItem(position);
             bindItem(holder, item, position);
         } catch (Exception e) {
-            Log.e(getClass().getSimpleName(), "Bind error", e);
+            Log.e(getClass().getSimpleName(), "Bind error："+ e);
         }
     }
 

@@ -6,7 +6,7 @@ package com.gallery.sweeper.photo.cleaner.data.events;
  * 时间：2025/8/5 21:08
  * 描述：
  */
-public class TrashSelectEvents {
+public class TrashEvents {
     public static class selectTrashByGroup {
         public String groupType;
         public String groupKey;
@@ -16,4 +16,12 @@ public class TrashSelectEvents {
             this.groupKey = groupKey;
         }
     }
+
+    public static class TrashChangeEvent {
+        public int size;
+        public TrashChangeEvent(int size) {
+            this.size = size;
+        }
+    }
+
 }
